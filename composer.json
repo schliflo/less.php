@@ -1,5 +1,5 @@
 {
-	"name": "concrete5/less.php",
+	"name": "Asenar/less.php",
 	"description": "Fork of Oyejorge's PHP port of the Javascript version of LESS http://lesscss.org",
 	"keywords": [ "less", "css", "php", "stylesheet", "less.js", "lesscss" ],
 	"homepage": "http://lessphp.gpeasy.com",
@@ -16,6 +16,10 @@
 		{
 			"name": "Martin Jantošovič",
 			"homepage": "https://github.com/Mordred"
+		},
+		{
+			"name": "Michaël Marinetti",
+			"homepage": "https://github.com/Asenar"
 		}
 	],
 	"require": {
