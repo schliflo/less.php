@@ -1154,8 +1154,9 @@ class Less_Parser{
 		}
 	}
 
-	// duplicate of Less_Tree_Color::FromKeyword
-	private function FromKeyword( $keyword ){
+	// duplicate of Less_Tree_Color::fromKeyword
+	// with cache use
+	private function fromKeyword( $keyword ){
 		$keyword = strtolower($keyword);
 
 		if( Less_Colors::hasOwnProperty($keyword) ){

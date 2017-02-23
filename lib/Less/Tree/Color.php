@@ -10,6 +10,7 @@ class Less_Tree_Color extends Less_Tree{
 	public $rgb;
 	public $alpha;
 	public $isTransparentKeyword;
+	public $colorname = null;
 	public $type = 'Color';
 
 	public function __construct($rgb, $a = 1, $isTransparentKeyword = null ){
@@ -22,15 +23,22 @@ class Less_Tree_Color extends Less_Tree{
 		}
 
 		$this->rgb = array();
-		if( is_array($rgb) ){
+		if ( is_array($rgb) ) {
 			$this->rgb = $rgb;
-		}else if( strlen($rgb) == 6 ){
-			foreach(str_split($rgb, 2) as $c){
-				$this->rgb[] = hexdec($c);
+		} else {
+			if (Less_Colors::hasOwnProperty($rgb)) {
+				$this->colorname = $rgb;
+				$rgb = substr(Less_Colors::color($keyword), 1);
 			}
-		}else{
-			foreach(str_split($rgb, 1) as $c){
-				$this->rgb[] = hexdec($c.$c);
+
+			if( strlen($rgb) == 6 ){
+				foreach(str_split($rgb, 2) as $c){
+					$this->rgb[] = hexdec($c);
+				}
+			} else if( strlen($rgb) == 3 ){
+				foreach(str_split($rgb, 1) as $c){
+					$this->rgb[] = hexdec($c.$c);
+				}
 			}
 		}
 		$this->alpha = is_numeric($a) ? $a : 1;
