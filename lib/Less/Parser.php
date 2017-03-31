@@ -262,7 +262,7 @@ class Less_Parser{
 		$not_variable_type = array(
 			'Comment',   // this include less comments ( // ) and css comments (/* */)
 			'Import',    // do not search variables in included files @import
-			'Ruleset',   // selectors (.someclass, #someid, …)
+			'Ruleset',   // selectors (.someclass, #someid, ...)
 			'Operation', //
 		);
 
@@ -983,9 +983,9 @@ class Less_Parser{
 	// rule, which represents `{ ... }`, the `ruleset` rule, and this `primary` rule,
 	// as represented by this simplified grammar:
 	//
-	//	 primary  →  (ruleset | rule)+
-	//	 ruleset  →  selector+ block
-	//	 block	→  '{' primary '}'
+	//	 primary    (ruleset | rule)+
+	//	 ruleset    selector+ block
+	//	 block      '{' primary '}'
 	//
 	// Only at one point is the primary rule not called from the
 	// block rule: at the root level.

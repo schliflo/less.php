@@ -91,13 +91,13 @@ class Less_SourceMap_Generator extends Less_Configurable {
 		$this->encoder = new Less_SourceMap_Base64VLQ();
 
 		$this->SetOptions($options);
-		
+
 		$this->options['sourceMapRootpath'] = $this->fixWindowsPath($this->options['sourceMapRootpath'], true);
 		$this->options['sourceMapBasepath'] = $this->fixWindowsPath($this->options['sourceMapBasepath'], true);
 	}
 
 	/**
-	 * Generates the CSS
+     * Generates the CSS
 	 *
 	 * @return string
 	 */
@@ -350,7 +350,7 @@ class Less_SourceMap_Generator extends Less_Configurable {
 	/**
 	 * fix windows paths
 	 * @param  string $path
-	 * @return string      
+	 * @return string
 	 */
 	public function fixWindowsPath($path, $addEndSlash = false){
 		$slash = ($addEndSlash) ? '/' : '';
